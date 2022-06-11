@@ -1,0 +1,1 @@
+/usr/local/bin/python3 /Users/martinc/Documents/Python/Secret_Defense_2022/close.py  && echo Exit status: $? && exit 1

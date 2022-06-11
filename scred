@@ -1,0 +1,22 @@
+>>> f = Fernet('coucou')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/cryptography/fernet.py", line 32, in __init__
+    key = base64.urlsafe_b64decode(key)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/base64.py", line 133, in urlsafe_b64decode
+    return b64decode(s)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/base64.py", line 87, in b64decode
+    return binascii.a2b_base64(s)
+binascii.Error: Incorrect padding
+>>> Fernet.generate_key()
+b'DxDh0Vv0yVGLyaVxEIke1NoiqA7i0EPig13RqMqD5jI='
+>>> import hashlib
+>>> hashlib.md5
+<built-in function openssl_md5>
+>>> hashlib.md5(b'DxDh0Vv0yVGLyaVxEIke1NoiqA7i0EPig13RqMqD5jI=').hexdigext()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: '_hashlib.HASH' object has no attribute 'hexdigext'
+>>> hashlib.md5(b'DxDh0Vv0yVGLyaVxEIke1NoiqA7i0EPig13RqMqD5jI=').hexdigest()
+'0fd344d9fb9c8280afdf0528ece85a23'
+>>> ^D
